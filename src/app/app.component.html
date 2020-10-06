@@ -1,0 +1,100 @@
+
+<div class="toolbar" role="banner">
+  <img alt="infoGenie Logo" src="../assets/images/InfoGenie.png" />
+
+  <div class="spacer"></div>
+  <div class="toolbar-text"> <i class="fa fa-exchange"></i> Manage</div>
+</div>
+
+<div class="content" role="main">
+
+  <my-tabs>
+    <my-tab [tabTitle]="'Target List'" tabIcon="bullseye">
+      No Record Found
+    </my-tab>
+    <my-tab tabTitle="Suppression List" tabIcon="user-o">
+      <div class="filter-panel">
+        <div class="filterRecord">
+          Total Suppression Record : <i class="fa fa-user-o"></i><span>{{suppression_list.length}}</span>
+        </div>
+        <div class="input-form">
+          <div class="form-group">
+            <div class="input-group">
+              <div class="input-group-addon">
+                <i class="fa fa-search"></i>
+              </div>
+              <input type="text" class="form-control" name="searchString" placeholder="Type to search..."
+                [(ngModel)]="searchString" (ngModelChange)="filterItems()" />
+            </div>
+          </div>
+          <label class="dropdown">
+
+            <div class="dd-button">
+              Dropdown
+            </div>
+
+            <input type="checkbox" class="dd-input" id="test">
+
+            <ul class="dd-menu">
+              <li><i class="fa fa-list-alt"></i>Create Suppression List</li>
+              <li><i class="fa fa-envelope-o"></i>Add Suppression Email</li>
+              <li><i class="fa fa-envelope"></i>Remove Suppression Email</li>
+            </ul>
+
+          </label>
+        </div>
+      </div>
+      <table class="supression-table">
+        <tr>
+          <th class="ta-start">Sr No.</th>
+          <th>Suppression List Name</th>
+          <th>Last Modified On</th>
+          <th>Last Modified By</th>
+          <th>Records</th>
+          <th>Actions</th>
+        </tr>
+        <tr *ngFor="let list of ListItems ; let i = index">
+          <td class="serial-no">{{list.Srno}}</td>
+          <td>
+            {{list.list_name}}
+          </td>
+          <td>
+            {{list.modified}}
+          </td>
+          <td>
+            {{list.modified_by}}
+          </td>
+          <td class="orange">
+            {{list.record}}
+          </td>
+          <td class="suppress-action">
+            <a><i class="fa fa-envelope-o" aria-hidden="true"></i></a>
+            <a><i class="fa fa-pencil" aria-hidden="true"></i></a>
+            <a><i class="fa fa-trash" aria-hidden="true"></i></a>
+          </td>
+        </tr>
+        <tr *ngIf="ListItems.length < 1" style="text-align: initial;">No Record Found</tr>
+      </table>
+      <div class="pagination-toolbar" role="toolbar" *ngIf="pageNumber!=0">
+
+
+        <div>
+          <ul class="pagination">
+            <li class="page-item" [ngClass]="{'disabled': (currentIndex == 1 || pageNumber == 0)}">
+              <a (click)="prevPage()" class="page-link"><i class="fa fa-angle-double-left"></i>&nbsp;Prev</a>
+            </li>
+            <li *ngFor="let page of pagesIndex" [ngClass]="{'active': (currentIndex == page)}">
+              <a class="page-link" (click)="setPage(page)">{{page}}</a>
+            </li>
+            <li class="page-item" [ngClass]="{'disabled':currentIndex == pageNumber}">
+              <a (click)="nextPage()" class="page-link">Next&nbsp;<i class="fa fa-angle-double-right"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <app-processing-queue></app-processing-queue>
+    </my-tab>
+  </my-tabs>
+</div>
+

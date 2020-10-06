@@ -1,0 +1,41 @@
+<div class="queueContainer">
+  <div class="queueTitle">
+    <p><b>Processing Queue</b></p>
+    <p><a href="#">View Suppression List</a></p>
+  </div>
+<div class="queueList"
+#scrollMe (scroll)="onScroll($event)">
+  <div *ngFor="let item of itemsToShow; let i = index">
+    <p class="createdDate">{{item.created}}</p>
+    <div>
+      <b>{{item.title}}</b>
+      <div class="field-container">
+        <div class="field-sub-container">
+          <p>Input Records</p>
+          <p>{{item.input_record}}</p>
+        </div>
+        <div class="field-sub-container">
+          <p>Valid Records</p>
+          <p>{{item.valid_record}}</p>
+        </div>
+        <div class="field-sub-container">
+          <p>Action</p>
+          <p>{{item.action}}</p>
+        </div>
+        <div class="field-sub-container">
+          <p>By</p>
+          <p>{{item.by}}</p>
+        </div>
+        <div class="field-sub-container">
+          <p>Lists</p>
+          <p>{{item.list_name}}</p>
+        </div>
+        <div class="queueStatus">
+          <span [ngClass]="{'orange' : item.status == 'In Progress'}">&nbsp;</span>
+         <b>{{item.status}}</b>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>

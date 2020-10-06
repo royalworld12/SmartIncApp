@@ -1,0 +1,277 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: aliceblue;
+    color: #1d3d70;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar .toolbar-text {
+    margin: 0 16px;
+  }
+
+  .toolbar .toolbar-text i{
+    transform: rotate(90deg);
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  .content {
+    display: flex;
+    margin: 82px auto 32px;
+    padding: 0 16px;
+    // max-width: 960px;
+    flex-direction: column;
+    // align-items: center;
+    color: #4c4c4c;
+  }
+
+ 
+
+  a,
+  a:visited,
+  a:hover {
+    color: #1976d2;
+    text-decoration: none;
+  }
+
+  a:hover {
+    color: #125699;
+  }
+
+  
+
+  .supression-table{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+
+    tr {
+      height: 2rem;
+  }
+
+  tr:not(:last-child){
+    border-bottom: 1px solid #cccccc;
+  }
+
+    .suppress-action{
+      display: flex;
+      justify-content: space-evenly;
+
+      a{
+        color : #4a648c;
+      }
+    }
+  }
+
+  .ta-start{
+    text-align: start;
+  }
+
+  .serial-no{
+    width: 50px;
+    text-align: center;
+  }
+
+  .filter-panel{
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+
+    .filterRecord{
+      font-weight: 500;;
+      span{
+      color: #f09532;
+      padding-left: 0.3rem;
+      font-size: 1.05rem;
+      }
+    }
+
+    
+   .form-group{
+    border: 1px solid #ccc;
+    border-radius: 5px;
+   }
+
+   input:focus{
+    outline: none;
+}
+
+    .input-group{
+      display: flex;
+    flex-direction: row-reverse;
+    padding: 5px 5px;
+   
+
+    .form-control{
+      border:none;
+    }
+
+    }
+  }
+
+  .pagination-toolbar{
+    text-align: center;
+    width: 100%;
+
+    .pagination{
+      list-style: none;
+      display: flex;
+      justify-content: center;
+
+      .active{
+        font-weight: 500;
+      }
+
+      .disabled{
+        pointer-events: none;
+      }
+
+      li{
+        padding: 0 0.2rem;
+        cursor: pointer;
+
+       
+      }
+    }
+  }
+
+  .input-form{
+    display: flex;
+
+    button{
+      margin-left: 1rem;
+    }
+  }
+
+  .orange{
+    color: #ef8d22;
+}
+ 
+
+  /* Dropdown */
+
+.dropdown {
+  display: inline-block;
+  position: relative;
+  margin-left: 1.5rem;
+}
+
+.dd-button {
+  display: inline-block;
+  border: 1px solid #4093d1;
+  border-radius: 4px;
+  padding: 5px 25px;
+  background-color: #4093d1;
+  color: #fff;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.dd-button:after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  right: 15px;
+  transform: translateY(-50%);
+  width: 0; 
+  height: 0; 
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #fff;
+}
+
+.dd-button:hover {
+  opacity: 0.9;
+}
+
+
+.dd-input {
+  display: none;
+}
+
+.dd-menu {
+  position: absolute;
+  top: 100%;
+  left: -115px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: 0;
+  margin: 2px 0 0 0;
+  box-shadow: 0 0 6px 0 rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  list-style-type: none;
+
+  i{
+    color: #4f688f;
+    margin-right: 0.5rem;
+  }
+}
+
+.dd-input + .dd-menu {
+  display: none;
+} 
+
+.dd-input:checked + .dd-menu {
+  display: block;
+} 
+
+.dd-menu li {
+  padding: 10px 20px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.dd-menu li:hover {
+  background-color: #f6f6f6;
+}
+
+.dd-menu li a {
+  display: block;
+  margin: -10px -20px;
+  padding: 10px 20px;
+}
+
+.dd-menu li.divider{
+  padding: 0;
+  border-bottom: 1px solid #cccccc;
+}
+
